@@ -4,190 +4,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#103b32">
-<meta name="description" content="ভারতের সাপ সম্পর্কে বাংলায় জানুন, সাপের বৈশিষ্ট্য ও সাপের কামড়ে জরুরি করণীয় শিখুন।">
-<title>সাপ পরিচিতি | Bengali Snake Guide</title>
+<title>বাংলা সাপ পরিচিতি | Snake Guide India</title>
 <style>
-:root{--green:#103b32;--mint:#dff4e8;--bg:#f5f8f5;--ink:#18352d}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
-header{background:linear-gradient(135deg,#103b32,#24765b);color:white;padding:32px 18px}
-nav,.wrap{max-width:1050px;margin:auto}
-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.logo{font-size:21px;font-weight:bold}
-nav a{color:white;text-decoration:none;margin-left:12px}
-.hero{max-width:1050px;margin:35px auto 5px}
-.hero h1{font-size:clamp(29px,6vw,48px);line-height:1.3;margin:0 0 12px}
-.hero p{max-width:650px;color:#e1f6e9}
-.pill{display:inline-block;background:#dff4e8;color:#103b32;padding:5px 12px;border-radius:30px;font-size:13px;font-weight:bold}
-main{max-width:1050px;margin:auto;padding:22px 16px}
-.warning{background:#fff0e8;border:1px solid #ffd0b8;border-radius:15px;padding:18px;margin-bottom:25px}
-.warning h2{margin-top:0;color:#a33220}
-.warning li{margin:5px 0}
-h2{line-height:1.4}
-.tools{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
-input,select{width:100%;padding:13px;border:1px solid #ccd9d0;border-radius:10px;font:inherit;background:white;color:var(--ink)}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}
-.filters button,.more{border:0;border-radius:30px;padding:9px 15px;background:var(--mint);color:var(--green);font-weight:bold;cursor:pointer}
-.filters button.active{background:var(--green);color:white}
+body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f2f7f3;color:#18352a}
+header{background:#123e2b;color:white;padding:30px 16px;text-align:center}
+header h1{margin:0 0 10px;font-size:29px}
+header p{line-height:1.7;margin:8px auto;max-width:650px}
+main{max-width:1050px;margin:auto;padding:18px}
+.notice{background:#fff1d8;border-left:5px solid #e89a22;padding:14px;border-radius:8px;line-height:1.7}
+.search{width:100%;padding:14px;border:1px solid #b9cbbf;border-radius:10px;font-size:16px;margin:16px 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+button{border:0;border-radius:8px;padding:10px 14px;background:#dce9df;color:#18352a;font-size:15px;cursor:pointer}
+button.active{background:#17633e;color:white}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:white;border:1px solid #e1e9e2;border-radius:16px;padding:18px;box-shadow:0 3px 12px #153d3210}
-.card .emoji{font-size:40px}
-.card h3{margin:5px 0}
-.card p{margin:8px 0}
-.tag{display:inline-block;background:#edf4ef;padding:3px 9px;border-radius:20px;font-size:12px}
-.danger{background:#ffe9e7;color:#982a20}
-.info{background:#e8f2ff;color:#174e86}
-.details{display:none;border-top:1px solid #e1e9e2;margin-top:12px;padding-top:10px}
-.details.show{display:block}
-button:focus,input:focus,select:focus{outline:2px solid #65a98b;outline-offset:2px}
-.no-results{padding:20px;background:white;border-radius:12px}
-section{margin:30px 0}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.step{background:white;padding:16px;border-radius:12px;border:1px solid #e1e9e2}
-footer{background:#103b32;color:white;text-align:center;padding:24px 15px;margin-top:30px}
-small{font-size:13px}
+.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #163c2512;border:1px solid #e1eae3}
+.photo{height:175px;background:#e4eee6;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.fallback{font-size:60px}
+.content{padding:15px}
+h2{font-size:22px}
+h3{margin:0 0 6px}
+.english{color:#65776b;margin:0 0 12px}
+.tag{display:inline-block;padding:6px 9px;border-radius:6px;font-size:13px;margin-bottom:8px}
+.venom{background:#ffe1df;color:#9b211c}
+.nonvenom{background:#dff5e4;color:#17633e}
+.card p{line-height:1.6}
+.emergency{background:#fff;border-radius:12px;padding:18px;margin-top:24px;line-height:1.8;border:1px solid #e4e9e5}
+.emergency h2{color:#a5231c}
+footer{text-align:center;padding:24px;color:#627267;font-size:13px;line-height:1.7}
+.small{font-size:13px;color:#627267}
 </style>
 </head>
 <body>
 <header>
-<nav>
-<div class="logo">🐍 সাপ পরিচিতি বাংলা</div>
-<div>
-<a href="#snakes">সাপ চিনুন</a>
-<a href="#emergency">জরুরি সাহায্য</a>
-</div>
-</nav>
-<div class="hero">
-<span class="pill">INDIA • BENGALI SNAKE GUIDE</span>
-<h1>সাপ চিনুন, নিরাপদ থাকুন</h1>
-<p>ভারতের পরিচিত সাপ, তাদের বৈশিষ্ট্য এবং সাপের কামড়ের সময় কী করতে হবে—সহজ বাংলায় জানুন।</p>
-</div>
+<h1>🐍 বাংলা সাপ পরিচিতি</h1>
+<p>ভারতের সাপ সম্পর্কে জানুন। ছবি, নাম ও প্রাথমিক পরিচিতি খুঁজুন।</p>
 </header>
-
 <main>
-<section class="warning" id="emergency">
-<h2>🚨 সাপে কামড়ালে এখনই যা করবেন</h2>
-<ul>
-<li>ব্যক্তিকে শান্ত রাখুন এবং যতটা সম্ভব নড়াচড়া কমান।</li>
-<li>কামড়ানো অঙ্গটি স্থির রাখুন; আংটি বা আঁটসাঁট জিনিস খুলে দিন।</li>
-<li>অবিলম্বে নিকটস্থ হাসপাতাল বা জরুরি চিকিৎসাকেন্দ্রে যান। ভারতে জরুরি নম্বর 112-এ কল করতে পারেন।</li>
-<li>সাপ ধরতে বা মারতে যাবেন না। নিরাপদ দূরত্ব থেকে ছবি থাকলে চিকিৎসককে দেখাতে পারেন, তবে ছবি তুলতে গিয়ে সময় নষ্ট করবেন না।</li>
-</ul>
-<strong>কখনও করবেন না:</strong> ক্ষত কাটবেন না, বিষ চুষবেন না, শক্ত করে দড়ি বাঁধবেন না, বরফ বা রাসায়নিক লাগাবেন না এবং ওঝার চিকিৎসায় সময় নষ্ট করবেন না।
-</section>
-
-<section id="snakes">
-<h2>🔎 ভারতের সাপের পরিচিতি</h2>
-<p>নাম বা বৈশিষ্ট্য দিয়ে খুঁজুন। শুধু রং বা ছবি দেখে সাপের প্রজাতি নিশ্চিত করা যায় না।</p>
-<div class="tools">
-<input id="search" type="search" placeholder="সাপের নাম খুঁজুন… যেমন গোখরা">
-<select id="kind" aria-label="সাপের ধরন">
-<option value="all">সব সাপ</option>
-<option value="venomous">বিষধর সাপ</option>
-<option value="nonvenomous">অবিষধর সাপ</option>
-</select>
+<div class="notice">
+<strong>⚠️ নিরাপত্তা:</strong> শুধু ছবি দেখে সাপের প্রজাতি নিশ্চিত করা যায় না। কোনো সাপকে ধরবেন না, মারবেন না বা কাছে যাবেন না।
 </div>
+
+<input id="search" class="search" type="search" placeholder="বাংলা বা ইংরেজি নামে সাপ খুঁজুন...">
+
 <div class="filters">
-<button class="active" data-filter="all">সব দেখুন</button>
-<button data-filter="venomous">বিষধর</button>
-<button data-filter="nonvenomous">অবিষধর</button>
+<button class="active" data-filter="all">সব সাপ</button>
+<button data-filter="venom">বিষধর সাপ</button>
+<button data-filter="nonvenom">সাধারণত অবিষধর</button>
 </div>
-<div class="grid" id="snakeGrid"></div>
-<p id="count" aria-live="polite"></p>
-</section>
 
-<section>
-<h2>🛡️ নিরাপদ থাকার নিয়ম</h2>
-<div class="steps">
-<div class="step"><strong>১. দূরে থাকুন</strong><p>সাপ দেখলে কাছে যাবেন না, ধরবেন না বা বিরক্ত করবেন না।</p></div>
-<div class="step"><strong>২. আলো ব্যবহার করুন</strong><p>রাতে বাইরে গেলে টর্চ ব্যবহার করুন এবং বন্ধ জুতো পরুন।</p></div>
-<div class="step"><strong>৩. ঘর পরিষ্কার রাখুন</strong><p>বাড়ির চারপাশের আবর্জনা ও ঘন ঝোপ পরিষ্কার রাখুন।</p></div>
-<div class="step"><strong>৪. বিশেষজ্ঞ ডাকুন</strong><p>সাপ বাড়িতে ঢুকলে স্থানীয় প্রশিক্ষিত উদ্ধারকারী বা বন দপ্তরের সাহায্য নিন।</p></div>
-</div>
-</section>
+<p id="count">সাপের তালিকা</p>
+<div id="grid" class="grid"></div>
 
-<section>
-<h2>ℹ️ এই ওয়েবসাইট সম্পর্কে</h2>
-<p>এই সাইটটি শিক্ষামূলক তথ্যের জন্য। এটি সাপ শনাক্তকরণ বা চিকিৎসকের পরামর্শের বিকল্প নয়। সাপের প্রজাতি ও স্থানভেদে বৈশিষ্ট্য আলাদা হতে পারে।</p>
+<section class="emergency">
+<h2>🚑 সাপে কামড়ালে কী করবেন?</h2>
+<ul>
+<li>আক্রান্ত ব্যক্তিকে শান্ত রাখুন এবং যতটা সম্ভব নড়াচড়া বন্ধ রাখুন।</li>
+<li>কামড়ানো অঙ্গটি স্থির রাখুন। আংটি বা আঁটসাঁট জিনিস খুলে দিন।</li>
+<li>অবিলম্বে নিকটস্থ হাসপাতালের জরুরি বিভাগে নিয়ে যান বা ভারতে 112-এ সাহায্য চান।</li>
+<li>সাপ ধরতে যাবেন না। নিরাপদ দূরত্ব থেকে তোলা ছবি থাকলে চিকিৎসককে দেখাতে পারেন।</li>
+<li>ক্ষত কাটবেন না, বিষ চুষবেন না, শক্ত করে দড়ি বাঁধবেন না এবং বরফ বা রাসায়নিক লাগাবেন না।</li>
+</ul>
+<p><strong>লক্ষণ আসার জন্য অপেক্ষা করবেন না।</strong> দ্রুত চিকিৎসা নেওয়া জরুরি।</p>
 </section>
 </main>
-
 <footer>
-<strong>🐍 সাপ পরিচিতি বাংলা</strong><br>
-<small>সাপকে বিরক্ত করবেন না • নিরাপদ দূরত্ব বজায় রাখুন</small>
+শিক্ষামূলক তথ্য মাত্র; এটি বিশেষজ্ঞের সনাক্তকরণ বা চিকিৎসার বিকল্প নয়।<br>
+ছবির জন্য বাইরের ওয়েবসাইটের সংযোগ প্রয়োজন হতে পারে।
 </footer>
 
 <script>
 const snakes=[
-{name:"ভারতীয় গোখরা",english:"Indian Cobra",type:"venomous",emoji:"🐍",region:"ভারতের বহু অঞ্চলে",desc:"ফণা তুলতে পারে। ফণায় চশমার মতো চিহ্ন থাকতে পারে, তবে সব গোখরার চিহ্ন এক নয়।",danger:"বিষধর"},
-{name:"কমন ক্রেইট",english:"Common Krait",type:"venomous",emoji:"🐍",region:"ভারতের বহু অঞ্চলে",desc:"সাধারণত গাঢ় রঙের শরীরে সরু সাদা ব্যান্ড থাকে। রাতে বেশি সক্রিয় হতে পারে।",danger:"বিষধর"},
-{name:"রাসেলস ভাইপার",english:"Russell's Viper",type:"venomous",emoji:"🐍",region:"ভারতের বিভিন্ন অঞ্চল",desc:"শরীরে তিন সারি বড় ডিম্বাকার দাগ দেখা যেতে পারে।",danger:"বিষধর"},
-{name:"স-স্কেলড ভাইপার",english:"Saw-scaled Viper",type:"venomous",emoji:"🐍",region:"বিশেষত শুষ্ক অঞ্চলসহ বিভিন্ন এলাকা",desc:"ছোট আকারের হতে পারে এবং শরীরে ঢেউখেলানো বা দাগযুক্ত নকশা থাকে।",danger:"বিষধর"},
-{name:"ব্যান্ডেড ক্রেইট",english:"Banded Krait",type:"venomous",emoji:"🐍",region:"ভারতের পূর্ব ও অন্যান্য অঞ্চলে",desc:"কালো ও হলুদ রঙের চওড়া পর্যায়ক্রমিক ব্যান্ড থাকতে পারে।",danger:"বিষধর"},
-{name:"মনোকলড গোখরা",english:"Monocled Cobra",type:"venomous",emoji:"🐍",region:"পূর্ব ও উত্তর-পূর্ব ভারতসহ বিভিন্ন এলাকা",desc:"ফণার পেছনে গোলাকার চিহ্ন থাকতে পারে।",danger:"বিষধর"},
-{name:"কিং কোবরা",english:"King Cobra",type:"venomous",emoji:"🐍",region:"বনাঞ্চল, বিশেষত উত্তর-পূর্ব ও দক্ষিণ ভারত",desc:"বড় আকারের সাপ। সাধারণত অন্য সাপ খায় এবং মানুষের থেকে দূরে থাকতে চায়।",danger:"বিষধর"},
-{name:"হাম্প-নোজড পিট ভাইপার",english:"Hump-nosed Pit Viper",type:"venomous",emoji:"🐍",region:"বিশেষত পশ্চিমঘাট অঞ্চল",desc:"মাথা ও নাকের আকৃতি আলাদা হতে পারে। সঠিক পরিচয় বিশেষজ্ঞের কাজ।",danger:"বিষধর"},
-{name:"ইন্ডিয়ান র‍্যাট স্নেক",english:"Indian Rat Snake",type:"nonvenomous",emoji:"🐍",region:"ভারতের বহু অঞ্চলে",desc:"দ্রুত চলতে পারে; ইঁদুর খেয়ে পরিবেশে উপকার করে।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
-{name:"চেকার্ড কিলব্যাক",english:"Checkered Keelback",type:"nonvenomous",emoji:"🐍",region:"পুকুর, জলাশয় ও জলাভূমির কাছে",desc:"শরীরে দাবার ছকের মতো দাগ থাকতে পারে; প্রায়ই জলের কাছে দেখা যায়।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
-{name:"ইন্ডিয়ান রক পাইথন",english:"Indian Rock Python",type:"nonvenomous",emoji:"🐍",region:"বন, তৃণভূমি ও জলাশয়ের কাছে",desc:"বড় ও শক্তিশালী সাপ। কাছে যাওয়া বা ধরার চেষ্টা বিপজ্জনক।",danger:"বিষধর নয়, তবু বিপজ্জনক হতে পারে"},
-{name:"স্যান্ড বোয়া",english:"Indian Sand Boa",type:"nonvenomous",emoji:"🐍",region:"শুষ্ক ও বালুময় অঞ্চলসহ বিভিন্ন এলাকা",desc:"মোটা দেহ ও ছোট লেজ থাকে; অনেক সময় মাটির নিচে থাকে।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
-{name:"ব্রোঞ্জব্যাক ট্রি স্নেক",english:"Common Bronzeback",type:"nonvenomous",emoji:"🐍",region:"ঝোপঝাড় ও গাছে",desc:"সরু দেহের গাছে চলাফেরা করা সাপ; প্রজাতি নিশ্চিত করতে বিশেষজ্ঞের সাহায্য নিন।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
-{name:"উলফ স্নেক",english:"Common Wolf Snake",type:"nonvenomous",emoji:"🐍",region:"বাড়ির আশপাশ ও বিভিন্ন পরিবেশে",desc:"গাঢ় শরীরে হালকা ব্যান্ড থাকতে পারে। ক্রেইটের সঙ্গে ভুল হতে পারে, তাই কাছে যাবেন না।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"}
+{name:"ভারতীয় গোখরা",en:"Indian Cobra",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Naja_naja.jpg",desc:"ভারতের পরিচিত বিষধর সাপের একটি। হুড বা ফণা তুলতে পারে।"},
+{name:"কমন ক্রেইট",en:"Common Krait",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Bungarus_caeruleus.jpg",desc:"সাধারণত গাঢ় রঙের শরীরে হালকা ব্যান্ড থাকে। কামড় বিপজ্জনক হতে পারে।"},
+{name:"রাসেলস ভাইপার",en:"Russell's Viper",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Daboia_russelii.jpg",desc:"শরীরে সারিবদ্ধ গোলাকার বা ডিম্বাকার দাগ দেখা যেতে পারে।"},
+{name:"স-স্কেলড ভাইপার",en:"Saw-scaled Viper",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Echis_carinatus.jpg",desc:"ছোট আকারের বিষধর সাপ। কাছে গিয়ে শনাক্ত করার চেষ্টা করবেন না।"},
+{name:"ইন্ডিয়ান র‍্যাট স্নেক",en:"Indian Rat Snake",type:"nonvenom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Ptyas_mucosa.jpg",desc:"দ্রুত চলাচল করতে পারে। দেখতে অন্য সাপের সঙ্গে মিল থাকতে পারে।"},
+{name:"চেকার্ড কিলব্যাক",en:"Checkered Keelback",type:"nonvenom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Fowlea_piscator.jpg",desc:"জলাশয়ের আশপাশে দেখা যায়। গায়ের নকশা দেখে একা সিদ্ধান্ত নেবেন না।"}
 ];
 
-<section style="padding:20px;text-align:center">
-  <h2>🐍 ভারতের পরিচিত সাপ</h2>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Naja_naja.jpg/320px-Naja_naja.jpg"
-       alt="গোখরা সাপ"
-       style="width:100%;max-width:320px;border-radius:12px">
-  <p>গোখরা সাপ (Indian Cobra)</p>
-</section>const grid=document.getElementById("snakeGrid");
+const grid=document.getElementById("grid");
 const search=document.getElementById("search");
-const kind=document.getElementById("kind");
 let active="all";
 
 function render(){
  const q=search.value.trim().toLowerCase();
- const filtered=snakes.filter(s=>{
-  const matches=(s.name+" "+s.english+" "+s.desc+" "+s.region).toLowerCase().includes(q);
-  return matches&&(active==="all"||s.type===active)&&(kind.value==="all"||s.type===kind.value);
- });
+ const list=snakes.filter(s=>
+ (active==="all"||s.type===active)&&
+ (s.name+" "+s.en+" "+s.desc).toLowerCase().includes(q)
+ );
  grid.innerHTML="";
- if(!filtered.length){
-  grid.innerHTML='<div class="no-results">কোনো মিল পাওয়া যায়নি। অন্য নাম দিয়ে খুঁজুন।</div>';
- }else{
-  filtered.forEach((s,i)=>{
-   const article=document.createElement("article");
-   article.className="card";
-   const title=document.createElement("h3");
-   title.textContent=s.name;
-   const emoji=document.createElement("div");
-   emoji.className="emoji";
-   emoji.textContent=s.emoji;
-   emoji.setAttribute("aria-hidden","true");
-   const en=document.createElement("p");
-   en.textContent=s.english;
-   const tag=document.createElement("span");
-   tag.className="tag "+(s.type==="venomous"?"danger":"info");
-   tag.textContent=s.danger;
-   const desc=document.createElement("p");
-   desc.textContent=s.desc;
-   const region=document.createElement("p");
-   region.textContent="আবাসস্থল: "+s.region;
-   article.append(emoji,title,en,tag,desc,region);
-   grid.appendChild(article);
-  });
- }
- document.getElementById("count").textContent="দেখানো হচ্ছে "+filtered.length+"টি সাপ";
+ document.getElementById("count").textContent="দেখানো হচ্ছে "+list.length+"টি সাপ";
+ list.forEach(s=>{
+  const card=document.createElement("article");
+  card.className="card";
+  const photo=document.createElement("div");
+  photo.className="photo";
+  const fallback=document.createElement("div");
+  fallback.className="fallback";
+  fallback.textContent=s.emoji;
+  photo.appendChild(fallback);
+  const img=document.createElement("img");
+  img.src=s.img;
+  img.alt=s.name+" ("+s.en+")";
+  img.loading="lazy";
+  img.onload=()=>{photo.innerHTML="";photo.appendChild(img)};
+  img.onerror=()=>{};
+  const content=document.createElement("div");
+  content.className="content";
+  const h=document.createElement("h3");
+  h.textContent=s.name;
+  const en=document.createElement("p");
+  en.className="english";
+  en.textContent=s.en;
+  const tag=document.createElement("span");
+  tag.className="tag "+(s.type==="venom"?"venom":"nonvenom");
+  tag.textContent=s.type==="venom"?"বিষধর":"সাধারণত অবিষধর";
+  const desc=document.createElement("p");
+  desc.textContent=s.desc;
+  content.append(h,en,tag,desc);
+  card.append(photo,content);
+  grid.appendChild(card);
+ });
 }
 search.addEventListener("input",render);
-kind.addEventListener("change",render);
 document.querySelectorAll("[data-filter]").forEach(btn=>{
  btn.addEventListener("click",()=>{
   active=btn.dataset.filter;
   document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b===btn));
-  kind.value="all";
   render();
  });
 });
@@ -195,4 +140,3 @@ render();
 </script>
 </body>
 </html>
-
