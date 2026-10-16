@@ -1,3 +1,192 @@
-Code
-https://github.com/ishans0612-lang/snake-guide-indiasnake-guide-india
-https://github.com/ishans0612-lang/snake-guide-india/tree/main
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#103b32">
+<meta name="description" content="ভারতের সাপ সম্পর্কে বাংলায় জানুন, সাপের বৈশিষ্ট্য ও সাপের কামড়ে জরুরি করণীয় শিখুন।">
+<title>সাপ পরিচিতি | Bengali Snake Guide</title>
+<style>
+:root{--green:#103b32;--mint:#dff4e8;--bg:#f5f8f5;--ink:#18352d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+header{background:linear-gradient(135deg,#103b32,#24765b);color:white;padding:32px 18px}
+nav,.wrap{max-width:1050px;margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin-left:12px}
+.hero{max-width:1050px;margin:35px auto 5px}
+.hero h1{font-size:clamp(29px,6vw,48px);line-height:1.3;margin:0 0 12px}
+.hero p{max-width:650px;color:#e1f6e9}
+.pill{display:inline-block;background:#dff4e8;color:#103b32;padding:5px 12px;border-radius:30px;font-size:13px;font-weight:bold}
+main{max-width:1050px;margin:auto;padding:22px 16px}
+.warning{background:#fff0e8;border:1px solid #ffd0b8;border-radius:15px;padding:18px;margin-bottom:25px}
+.warning h2{margin-top:0;color:#a33220}
+.warning li{margin:5px 0}
+h2{line-height:1.4}
+.tools{display:grid;grid-template-columns:1fr;gap:12px;margin:20px 0}
+input,select{width:100%;padding:13px;border:1px solid #ccd9d0;border-radius:10px;font:inherit;background:white;color:var(--ink)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}
+.filters button,.more{border:0;border-radius:30px;padding:9px 15px;background:var(--mint);color:var(--green);font-weight:bold;cursor:pointer}
+.filters button.active{background:var(--green);color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:white;border:1px solid #e1e9e2;border-radius:16px;padding:18px;box-shadow:0 3px 12px #153d3210}
+.card .emoji{font-size:40px}
+.card h3{margin:5px 0}
+.card p{margin:8px 0}
+.tag{display:inline-block;background:#edf4ef;padding:3px 9px;border-radius:20px;font-size:12px}
+.danger{background:#ffe9e7;color:#982a20}
+.info{background:#e8f2ff;color:#174e86}
+.details{display:none;border-top:1px solid #e1e9e2;margin-top:12px;padding-top:10px}
+.details.show{display:block}
+button:focus,input:focus,select:focus{outline:2px solid #65a98b;outline-offset:2px}
+.no-results{padding:20px;background:white;border-radius:12px}
+section{margin:30px 0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.step{background:white;padding:16px;border-radius:12px;border:1px solid #e1e9e2}
+footer{background:#103b32;color:white;text-align:center;padding:24px 15px;margin-top:30px}
+small{font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">🐍 সাপ পরিচিতি বাংলা</div>
+<div>
+<a href="#snakes">সাপ চিনুন</a>
+<a href="#emergency">জরুরি সাহায্য</a>
+</div>
+</nav>
+<div class="hero">
+<span class="pill">INDIA • BENGALI SNAKE GUIDE</span>
+<h1>সাপ চিনুন, নিরাপদ থাকুন</h1>
+<p>ভারতের পরিচিত সাপ, তাদের বৈশিষ্ট্য এবং সাপের কামড়ের সময় কী করতে হবে—সহজ বাংলায় জানুন।</p>
+</div>
+</header>
+
+<main>
+<section class="warning" id="emergency">
+<h2>🚨 সাপে কামড়ালে এখনই যা করবেন</h2>
+<ul>
+<li>ব্যক্তিকে শান্ত রাখুন এবং যতটা সম্ভব নড়াচড়া কমান।</li>
+<li>কামড়ানো অঙ্গটি স্থির রাখুন; আংটি বা আঁটসাঁট জিনিস খুলে দিন।</li>
+<li>অবিলম্বে নিকটস্থ হাসপাতাল বা জরুরি চিকিৎসাকেন্দ্রে যান। ভারতে জরুরি নম্বর 112-এ কল করতে পারেন।</li>
+<li>সাপ ধরতে বা মারতে যাবেন না। নিরাপদ দূরত্ব থেকে ছবি থাকলে চিকিৎসককে দেখাতে পারেন, তবে ছবি তুলতে গিয়ে সময় নষ্ট করবেন না।</li>
+</ul>
+<strong>কখনও করবেন না:</strong> ক্ষত কাটবেন না, বিষ চুষবেন না, শক্ত করে দড়ি বাঁধবেন না, বরফ বা রাসায়নিক লাগাবেন না এবং ওঝার চিকিৎসায় সময় নষ্ট করবেন না।
+</section>
+
+<section id="snakes">
+<h2>🔎 ভারতের সাপের পরিচিতি</h2>
+<p>নাম বা বৈশিষ্ট্য দিয়ে খুঁজুন। শুধু রং বা ছবি দেখে সাপের প্রজাতি নিশ্চিত করা যায় না।</p>
+<div class="tools">
+<input id="search" type="search" placeholder="সাপের নাম খুঁজুন… যেমন গোখরা">
+<select id="kind" aria-label="সাপের ধরন">
+<option value="all">সব সাপ</option>
+<option value="venomous">বিষধর সাপ</option>
+<option value="nonvenomous">অবিষধর সাপ</option>
+</select>
+</div>
+<div class="filters">
+<button class="active" data-filter="all">সব দেখুন</button>
+<button data-filter="venomous">বিষধর</button>
+<button data-filter="nonvenomous">অবিষধর</button>
+</div>
+<div class="grid" id="snakeGrid"></div>
+<p id="count" aria-live="polite"></p>
+</section>
+
+<section>
+<h2>🛡️ নিরাপদ থাকার নিয়ম</h2>
+<div class="steps">
+<div class="step"><strong>১. দূরে থাকুন</strong><p>সাপ দেখলে কাছে যাবেন না, ধরবেন না বা বিরক্ত করবেন না।</p></div>
+<div class="step"><strong>২. আলো ব্যবহার করুন</strong><p>রাতে বাইরে গেলে টর্চ ব্যবহার করুন এবং বন্ধ জুতো পরুন।</p></div>
+<div class="step"><strong>৩. ঘর পরিষ্কার রাখুন</strong><p>বাড়ির চারপাশের আবর্জনা ও ঘন ঝোপ পরিষ্কার রাখুন।</p></div>
+<div class="step"><strong>৪. বিশেষজ্ঞ ডাকুন</strong><p>সাপ বাড়িতে ঢুকলে স্থানীয় প্রশিক্ষিত উদ্ধারকারী বা বন দপ্তরের সাহায্য নিন।</p></div>
+</div>
+</section>
+
+<section>
+<h2>ℹ️ এই ওয়েবসাইট সম্পর্কে</h2>
+<p>এই সাইটটি শিক্ষামূলক তথ্যের জন্য। এটি সাপ শনাক্তকরণ বা চিকিৎসকের পরামর্শের বিকল্প নয়। সাপের প্রজাতি ও স্থানভেদে বৈশিষ্ট্য আলাদা হতে পারে।</p>
+</section>
+</main>
+
+<footer>
+<strong>🐍 সাপ পরিচিতি বাংলা</strong><br>
+<small>সাপকে বিরক্ত করবেন না • নিরাপদ দূরত্ব বজায় রাখুন</small>
+</footer>
+
+<script>
+const snakes=[
+{name:"ভারতীয় গোখরা",english:"Indian Cobra",type:"venomous",emoji:"🐍",region:"ভারতের বহু অঞ্চলে",desc:"ফণা তুলতে পারে। ফণায় চশমার মতো চিহ্ন থাকতে পারে, তবে সব গোখরার চিহ্ন এক নয়।",danger:"বিষধর"},
+{name:"কমন ক্রেইট",english:"Common Krait",type:"venomous",emoji:"🐍",region:"ভারতের বহু অঞ্চলে",desc:"সাধারণত গাঢ় রঙের শরীরে সরু সাদা ব্যান্ড থাকে। রাতে বেশি সক্রিয় হতে পারে।",danger:"বিষধর"},
+{name:"রাসেলস ভাইপার",english:"Russell's Viper",type:"venomous",emoji:"🐍",region:"ভারতের বিভিন্ন অঞ্চল",desc:"শরীরে তিন সারি বড় ডিম্বাকার দাগ দেখা যেতে পারে।",danger:"বিষধর"},
+{name:"স-স্কেলড ভাইপার",english:"Saw-scaled Viper",type:"venomous",emoji:"🐍",region:"বিশেষত শুষ্ক অঞ্চলসহ বিভিন্ন এলাকা",desc:"ছোট আকারের হতে পারে এবং শরীরে ঢেউখেলানো বা দাগযুক্ত নকশা থাকে।",danger:"বিষধর"},
+{name:"ব্যান্ডেড ক্রেইট",english:"Banded Krait",type:"venomous",emoji:"🐍",region:"ভারতের পূর্ব ও অন্যান্য অঞ্চলে",desc:"কালো ও হলুদ রঙের চওড়া পর্যায়ক্রমিক ব্যান্ড থাকতে পারে।",danger:"বিষধর"},
+{name:"মনোকলড গোখরা",english:"Monocled Cobra",type:"venomous",emoji:"🐍",region:"পূর্ব ও উত্তর-পূর্ব ভারতসহ বিভিন্ন এলাকা",desc:"ফণার পেছনে গোলাকার চিহ্ন থাকতে পারে।",danger:"বিষধর"},
+{name:"কিং কোবরা",english:"King Cobra",type:"venomous",emoji:"🐍",region:"বনাঞ্চল, বিশেষত উত্তর-পূর্ব ও দক্ষিণ ভারত",desc:"বড় আকারের সাপ। সাধারণত অন্য সাপ খায় এবং মানুষের থেকে দূরে থাকতে চায়।",danger:"বিষধর"},
+{name:"হাম্প-নোজড পিট ভাইপার",english:"Hump-nosed Pit Viper",type:"venomous",emoji:"🐍",region:"বিশেষত পশ্চিমঘাট অঞ্চল",desc:"মাথা ও নাকের আকৃতি আলাদা হতে পারে। সঠিক পরিচয় বিশেষজ্ঞের কাজ।",danger:"বিষধর"},
+{name:"ইন্ডিয়ান র‍্যাট স্নেক",english:"Indian Rat Snake",type:"nonvenomous",emoji:"🐍",region:"ভারতের বহু অঞ্চলে",desc:"দ্রুত চলতে পারে; ইঁদুর খেয়ে পরিবেশে উপকার করে।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
+{name:"চেকার্ড কিলব্যাক",english:"Checkered Keelback",type:"nonvenomous",emoji:"🐍",region:"পুকুর, জলাশয় ও জলাভূমির কাছে",desc:"শরীরে দাবার ছকের মতো দাগ থাকতে পারে; প্রায়ই জলের কাছে দেখা যায়।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
+{name:"ইন্ডিয়ান রক পাইথন",english:"Indian Rock Python",type:"nonvenomous",emoji:"🐍",region:"বন, তৃণভূমি ও জলাশয়ের কাছে",desc:"বড় ও শক্তিশালী সাপ। কাছে যাওয়া বা ধরার চেষ্টা বিপজ্জনক।",danger:"বিষধর নয়, তবু বিপজ্জনক হতে পারে"},
+{name:"স্যান্ড বোয়া",english:"Indian Sand Boa",type:"nonvenomous",emoji:"🐍",region:"শুষ্ক ও বালুময় অঞ্চলসহ বিভিন্ন এলাকা",desc:"মোটা দেহ ও ছোট লেজ থাকে; অনেক সময় মাটির নিচে থাকে।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
+{name:"ব্রোঞ্জব্যাক ট্রি স্নেক",english:"Common Bronzeback",type:"nonvenomous",emoji:"🐍",region:"ঝোপঝাড় ও গাছে",desc:"সরু দেহের গাছে চলাফেরা করা সাপ; প্রজাতি নিশ্চিত করতে বিশেষজ্ঞের সাহায্য নিন।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"},
+{name:"উলফ স্নেক",english:"Common Wolf Snake",type:"nonvenomous",emoji:"🐍",region:"বাড়ির আশপাশ ও বিভিন্ন পরিবেশে",desc:"গাঢ় শরীরে হালকা ব্যান্ড থাকতে পারে। ক্রেইটের সঙ্গে ভুল হতে পারে, তাই কাছে যাবেন না।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"}
+];
+
+const grid=document.getElementById("snakeGrid");
+const search=document.getElementById("search");
+const kind=document.getElementById("kind");
+let active="all";
+
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const filtered=snakes.filter(s=>{
+  const matches=(s.name+" "+s.english+" "+s.desc+" "+s.region).toLowerCase().includes(q);
+  return matches&&(active==="all"||s.type===active)&&(kind.value==="all"||s.type===kind.value);
+ });
+ grid.innerHTML="";
+ if(!filtered.length){
+  grid.innerHTML='<div class="no-results">কোনো মিল পাওয়া যায়নি। অন্য নাম দিয়ে খুঁজুন।</div>';
+ }else{
+  filtered.forEach((s,i)=>{
+   const article=document.createElement("article");
+   article.className="card";
+   const title=document.createElement("h3");
+   title.textContent=s.name;
+   const emoji=document.createElement("div");
+   emoji.className="emoji";
+   emoji.textContent=s.emoji;
+   emoji.setAttribute("aria-hidden","true");
+   const en=document.createElement("p");
+   en.textContent=s.english;
+   const tag=document.createElement("span");
+   tag.className="tag "+(s.type==="venomous"?"danger":"info");
+   tag.textContent=s.danger;
+   const desc=document.createElement("p");
+   desc.textContent=s.desc;
+   const region=document.createElement("p");
+   region.textContent="আবাসস্থল: "+s.region;
+   article.append(emoji,title,en,tag,desc,region);
+   grid.appendChild(article);
+  });
+ }
+ document.getElementById("count").textContent="দেখানো হচ্ছে "+filtered.length+"টি সাপ";
+}
+search.addEventListener("input",render);
+kind.addEventListener("change",render);
+document.querySelectorAll("[data-filter]").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  active=btn.dataset.filter;
+  document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b===btn));
+  kind.value="all";
+  render();
+ });
+});
+render();
+</script>
+</body>
+</html>
+
