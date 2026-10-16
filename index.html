@@ -136,7 +136,13 @@ const snakes=[
 {name:"উলফ স্নেক",english:"Common Wolf Snake",type:"nonvenomous",emoji:"🐍",region:"বাড়ির আশপাশ ও বিভিন্ন পরিবেশে",desc:"গাঢ় শরীরে হালকা ব্যান্ড থাকতে পারে। ক্রেইটের সঙ্গে ভুল হতে পারে, তাই কাছে যাবেন না।",danger:"সাধারণত মানুষের জন্য বিষাক্ত নয়"}
 ];
 
-const grid=document.getElementById("snakeGrid");
+<section style="padding:20px;text-align:center">
+  <h2>🐍 ভারতের পরিচিত সাপ</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Naja_naja.jpg/320px-Naja_naja.jpg"
+       alt="গোখরা সাপ"
+       style="width:100%;max-width:320px;border-radius:12px">
+  <p>গোখরা সাপ (Indian Cobra)</p>
+</section>const grid=document.getElementById("snakeGrid");
 const search=document.getElementById("search");
 const kind=document.getElementById("kind");
 let active="all";
@@ -187,10 +193,6 @@ document.querySelectorAll("[data-filter]").forEach(btn=>{
 });
 render();
 </script>
-</body><section style="padding:20px;text-align:center">
-  <h2>ভারতের পরিচিত সাপ</h2>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Naja_naja.jpg/320px-Naja_naja.jpg" alt="গোখরা সাপ" style="width:100%;max-width:320px;border-radius:12px">
-  <p>গোখরা সাপ (Indian Cobra)</p>
-</section>
+</body>
 </html>
 
