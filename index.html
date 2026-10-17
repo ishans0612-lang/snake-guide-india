@@ -1,248 +1,287 @@
 
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>বাংলা সাপ পরিচিতি | Snake Guide India</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071810">
+<title>Snake Guide India | Wildlife Explorer</title>
 <style>
+:root {
+  --bg:#071810;
+  --card:#10271b;
+  --green:#b9f36b;
+  --text:#f3f7ee;
+  --muted:#a6b8a9;
+  --line:#294634;
+  --red:#ff7777;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;background:#f2f7f3;color:#18352a}
-header{background:#123e2b;color:white;padding:30px 16px;text-align:center}
-header h1{margin:0 0 10px;font-size:29px}
-header p{line-height:1.7;margin:8px auto;max-width:650px}
-main{max-width:1050px;margin:auto;padding:18px}
-.notice{background:#fff1d8;border-left:5px solid #e89a22;padding:14px;border-radius:8px;line-height:1.7}
-.search{width:100%;padding:14px;border:1px solid #b9cbbf;border-radius:10px;font-size:16px;margin:16px 0}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-button{border:0;border-radius:8px;padding:10px 14px;background:#dce9df;color:#18352a;font-size:15px;cursor:pointer}
-button.active{background:#17633e;color:white}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #163c2512;border:1px solid #e1eae3}
-.photo{height:175px;background:#e4eee6;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover}
-.fallback{font-size:60px}
-.content{padding:15px}
-h2{font-size:22px}
-h3{margin:0 0 6px}
-.english{color:#65776b;margin:0 0 12px}
-.tag{display:inline-block;padding:6px 9px;border-radius:6px;font-size:13px;margin-bottom:8px}
-.venom{background:#ffe1df;color:#9b211c}
-.nonvenom{background:#dff5e4;color:#17633e}
-.card p{line-height:1.6}
-.emergency{background:#fff;border-radius:12px;padding:18px;margin-top:24px;line-height:1.8;border:1px solid #e4e9e5}
-.emergency h2{color:#a5231c}
-footer{text-align:center;padding:24px;color:#627267;font-size:13px;line-height:1.7}
-.small{font-size:13px;color:#627267}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.6
+}
+.container{width:min(1100px,92%);margin:auto}
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 0;border-bottom:1px solid var(--line)
+}
+.logo{font-size:21px;font-weight:bold}
+.logo span{color:var(--green)}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+.hero{
+  padding:65px 0;display:grid;
+  grid-template-columns:1.2fr .8fr;gap:30px;align-items:center
+}
+.tag{color:var(--green);font-size:12px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.05;margin:18px 0}
+h1 span{color:var(--green)}
+p{color:var(--muted)}
+.btn{
+  display:inline-block;padding:13px 18px;border-radius:10px;
+  background:var(--green);color:#102016;font-weight:bold;
+  text-decoration:none;border:0;cursor:pointer
+}
+.btn.secondary{background:transparent;color:white;border:1px solid var(--line)}
+.hero-art{
+  min-height:280px;display:grid;place-items:center;
+  border:1px solid var(--line);border-radius:28px;
+  background:radial-gradient(circle,#24492c,#0b1b11 70%)
+}
+.hero-art span{font-size:130px}
+.stats{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.stats strong{display:block;font-size:21px}
+.stats small{color:var(--muted)}
+section{padding:40px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+.searchbar{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}
+input,select{
+  background:#10271b;color:white;border:1px solid var(--line);
+  border-radius:10px;padding:14px;font-size:15px
+}
+input{flex:1;min-width:190px}
+select{max-width:100%;min-width:145px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:17px;overflow:hidden;transition:.2s
+}
+.card:hover{transform:translateY(-4px);border-color:var(--green)}
+.snake-picture{
+  height:125px;display:grid;place-items:center;
+  background:linear-gradient(140deg,#254a2d,#132b1b);font-size:65px
+}
+.card-body{padding:17px}
+.card h3{margin:0;font-size:20px}
+.scientific{font-style:italic;color:#91aa98;font-size:13px}
+.badge{
+  display:inline-block;padding:4px 8px;border-radius:6px;
+  font-size:11px;font-weight:bold;margin:10px 0
+}
+.danger{background:#4a2222;color:#ffb1a8}
+.safe{background:#244329;color:#c9f7a7}
+.card p{font-size:14px;min-height:62px}
+.card button{
+  width:100%;padding:11px;border:1px solid #48663e;
+  background:#1b3823;color:var(--green);border-radius:9px;
+  font-weight:bold;cursor:pointer
+}
+#count{color:var(--muted);font-size:14px}
+.emergency{
+  padding:28px;background:#291918;
+  border:1px solid #673b37;border-radius:20px
+}
+.emergency h2{color:#ffaaa0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.step{padding:17px;background:#102019;border-radius:12px}
+.step strong{display:block;margin-bottom:7px}
+.step p{font-size:14px;margin-bottom:0}
+.warning{color:#ffaaa0;font-weight:bold}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.feature{padding:20px;border:1px solid var(--line);border-radius:15px}
+footer{border-top:1px solid var(--line);padding:25px 0;margin-top:35px;font-size:13px}
+.modal{
+  display:none;position:fixed;inset:0;background:#000c;
+  z-index:5;align-items:center;justify-content:center;padding:18px
+}
+.modal.show{display:flex}
+.modal-content{
+  background:#10271b;border:1px solid var(--line);
+  border-radius:18px;padding:25px;width:min(500px,100%);max-height:85vh;overflow:auto
+}
+.close{float:right;background:#294634;color:white;border:0;border-radius:8px;padding:8px 12px;cursor:pointer}
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr;padding:42px 0}
+  .hero-art{min-height:220px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card-body{padding:12px}.card h3{font-size:16px}
+  .card p{font-size:12px;min-height:75px}
+  .steps,.features{grid-template-columns:1fr}
+  nav a{margin-left:8px;font-size:12px}
+}
+@media(max-width:400px){
+  .grid{grid-template-columns:1fr}
+  nav{align-items:flex-start;gap:10px}
+  .logo{font-size:17px}
+}
 </style>
 </head>
 <body>
-<header>
-<h1>🐍 বাংলা সাপ পরিচিতি</h1>
-<p>ভারতের সাপ সম্পর্কে জানুন। ছবি, নাম ও প্রাথমিক পরিচিতি খুঁজুন।</p>
+
+<header class="container">
+<nav>
+  <div class="logo">🐍 Snake Guide <span>India</span></div>
+  <div>
+    <a href="#library">Library</a>
+    <a href="#emergency">First Aid</a>
+  </div>
+</nav>
 </header>
+
 <main>
-<div class="notice">
-<strong>⚠️ নিরাপত্তা:</strong> শুধু ছবি দেখে সাপের প্রজাতি নিশ্চিত করা যায় না। কোনো সাপকে ধরবেন না, মারবেন না বা কাছে যাবেন না।
-</div>
-
-<input id="search" class="search" type="search" placeholder="বাংলা বা ইংরেজি নামে সাপ খুঁজুন...">
-
-<div class="filters">
-<button class="active" data-filter="all">সব সাপ</button>
-<button data-filter="venom">বিষধর সাপ</button>
-<button data-filter="nonvenom">সাধারণত অবিষধর</button>
-</div>
-
-<p id="count">সাপের তালিকা</p>
-<div id="grid" class="grid"></div>
-
-<section class="emergency">
-<h2>🚑 সাপে কামড়ালে কী করবেন?</h2>
-<ul>
-<li>আক্রান্ত ব্যক্তিকে শান্ত রাখুন এবং যতটা সম্ভব নড়াচড়া বন্ধ রাখুন।</li>
-<li>কামড়ানো অঙ্গটি স্থির রাখুন। আংটি বা আঁটসাঁট জিনিস খুলে দিন।</li>
-<li>অবিলম্বে নিকটস্থ হাসপাতালের জরুরি বিভাগে নিয়ে যান বা ভারতে 112-এ সাহায্য চান।</li>
-<li>সাপ ধরতে যাবেন না। নিরাপদ দূরত্ব থেকে তোলা ছবি থাকলে চিকিৎসককে দেখাতে পারেন।</li>
-<li>ক্ষত কাটবেন না, বিষ চুষবেন না, শক্ত করে দড়ি বাঁধবেন না এবং বরফ বা রাসায়নিক লাগাবেন না।</li>
-</ul>
-<p><strong>লক্ষণ আসার জন্য অপেক্ষা করবেন না।</strong> দ্রুত চিকিৎসা নেওয়া জরুরি।</p>
+<div class="container">
+<section class="hero">
+  <div>
+    <div class="tag">INDIAN WILDLIFE EXPLORER</div>
+    <h1>Discover.<br><span>Identify.</span><br>Protect.</h1>
+    <p>Explore Indian snakes, learn their characteristics and understand how to stay safe around wildlife.</p>
+    <p>
+      <a class="btn" href="#library">Explore Snakes ↗</a>
+      <a class="btn secondary" href="#emergency">Emergency Guide</a>
+    </p>
+    <div class="stats">
+      <div><strong id="total">0</strong><small>Guide entries</small></div>
+      <div><strong>India</strong><small>Wildlife guide</small></div>
+      <div><strong>24/7</strong><small>Learn safely</small></div>
+    </div>
+  </div>
+  <div class="hero-art"><span>🐍</span></div>
 </section>
+
+<section id="library">
+  <div class="tag">THE SNAKE DIRECTORY</div>
+  <h2>Explore the Snake World</h2>
+  <p>Search a name or filter by venom status.</p>
+  <div class="searchbar">
+    <input id="search" placeholder="Search snake name..." aria-label="Search snakes">
+    <select id="filter" aria-label="Filter by venom status">
+      <option value="all">All snakes</option>
+      <option value="venomous">Venomous</option>
+      <option value="nonvenomous">Non-venomous</option>
+    </select>
+  </div>
+  <div id="count"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="emergency">
+  <div class="emergency">
+    <div class="tag">IMPORTANT SAFETY INFORMATION</div>
+    <h2>Snakebite? Get medical help immediately.</h2>
+    <p>A suspected snakebite is an emergency, even if there is no immediate pain.</p>
+    <p><a class="btn" href="tel:112">Call Emergency Services: 112</a></p>
+    <div class="steps">
+      <div class="step"><strong>01 — Stay still</strong><p>Reassure the person, limit movement and keep the bitten limb still.</p></div>
+      <div class="step"><strong>02 — Go to hospital</strong><p>Arrange urgent transport. Remove rings or tight items before swelling develops.</p></div>
+      <div class="step"><strong>03 — Keep away</strong><p>Do not approach, catch or kill the snake. Remember its appearance only from a safe distance.</p></div>
+    </div>
+    <p class="warning">Never cut or suck the wound, apply ice, use a tourniquet or delay hospital treatment for home remedies.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="tag">OUR MISSION</div>
+  <h2>Knowledge protects lives.</h2>
+  <div class="features">
+    <div class="feature"><h3>🔎 Learn</h3><p>Study common names, scientific names and identification clues.</p></div>
+    <div class="feature"><h3>🌿 Respect</h3><p>Keep a safe distance and never handle wild snakes.</p></div>
+    <div class="feature"><h3>🛡️ Stay safe</h3><p>Use reliable information and seek professional help in emergencies.</p></div>
+  </div>
+</section>
+</div>
 </main>
-<footer>
-শিক্ষামূলক তথ্য মাত্র; এটি বিশেষজ্ঞের সনাক্তকরণ বা চিকিৎসার বিকল্প নয়।<br>
-ছবির জন্য বাইরের ওয়েবসাইটের সংযোগ প্রয়োজন হতে পারে।
+
+<footer class="container">
+  Snake Guide India © <span id="year"></span><br>
+  Educational information only. Identification is not definitive; consult wildlife experts.
 </footer>
 
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal-content">
+    <button class="close" id="close">Close ✕</button>
+    <h2 id="modalName"></h2>
+    <div class="scientific" id="modalScientific"></div>
+    <p id="modalStatus"></p>
+    <p id="modalInfo"></p>
+    <p id="modalSafety"></p>
+  </div>
+</div>
+
 <script>
-const snakes=[
-{name:"ভারতীয় গোখরা",en:"Indian Cobra",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Naja_naja.jpg",desc:"ভারতের পরিচিত বিষধর সাপের একটি। হুড বা ফণা তুলতে পারে।"},
-{name:"কমন ক্রেইট",en:"Common Krait",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Bungarus_caeruleus.jpg",desc:"সাধারণত গাঢ় রঙের শরীরে হালকা ব্যান্ড থাকে। কামড় বিপজ্জনক হতে পারে।"},
-{name:"রাসেলস ভাইপার",en:"Russell's Viper",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Daboia_russelii.jpg",desc:"শরীরে সারিবদ্ধ গোলাকার বা ডিম্বাকার দাগ দেখা যেতে পারে।"},
-{name:"স-স্কেলড ভাইপার",en:"Saw-scaled Viper",type:"venom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Echis_carinatus.jpg",desc:"ছোট আকারের বিষধর সাপ। কাছে গিয়ে শনাক্ত করার চেষ্টা করবেন না।"},
-{name:"ইন্ডিয়ান র‍্যাট স্নেক",en:"Indian Rat Snake",type:"nonvenom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Ptyas_mucosa.jpg",desc:"দ্রুত চলাচল করতে পারে। দেখতে অন্য সাপের সঙ্গে মিল থাকতে পারে।"},
-{name:"চেকার্ড কিলব্যাক",en:"Checkered Keelback",type:"nonvenom",emoji:"🐍",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Fowlea_piscator.jpg",desc:"জলাশয়ের আশপাশে দেখা যায়। গায়ের নকশা দেখে একা সিদ্ধান্ত নেবেন না।"}
-
-const snakeData = 
-
-["কিং কোবরা","King Cobra","venom","Ophiophagus_hannah"],
-["ইন্ডিয়ান উলফ স্নেক","Common Wolf Snake","nonvenom","Lycodon_aulicus"],
-["কমন ক্রেইটের মতো দেখতে উলফ স্নেক","Common Wolf Snake","nonvenom","Lycodon_striatus"],
-["ইন্ডিয়ান র‍্যাট স্নেক","Indian Rat Snake","nonvenom","Ptyas_mucosa"],
-["চেকার্ড কিলব্যাক","Checkered Keelback","nonvenom","Fowlea_piscator"],
-["ইন্ডিয়ান পাইথন","Indian Python","nonvenom","Python_molurus"],
-["রেড স্যান্ড বোয়া","Red Sand Boa","nonvenom","Eryx_johnii"],
-["কমন স্যান্ড বোয়া","Common Sand Boa","nonvenom","Eryx_conicus"],
-["গ্রিন ভাইন স্নেক","Green Vine Snake","nonvenom","Ahaetulla_nasuta"],
-["ব্রোঞ্জব্যাক ট্রি স্নেক","Bronzeback Tree Snake","nonvenom","Dendrelaphis_tristis"],
-["গোল্ডেন ট্রি স্নেক","Golden Tree Snake","nonvenom","Chrysopelea_ornata"],
-["কমন ব্রোঞ্জব্যাক","Common Bronzeback","nonvenom","Dendrelaphis_pictus"],
-["কমন ট্রিঙ্কেট স্নেক","Common Trinket Snake","nonvenom","Coelognathus_helena"],
-["রেড-নেকড কিলব্যাক","Red-necked Keelback","venom","Rhabdophis_subminiatus"],
-["কমন ক্যাট স্নেক","Common Cat Snake","venom","Boiga_trigonata"],
-["গ্রিন ক্যাট স্নেক","Green Cat Snake","venom","Boiga_cyanea"],
-["ফরস্টেনস ক্যাট স্নেক","Forsten's Cat Snake","venom","Boiga_forsteni"],
-["কমন কুকরি স্নেক","Common Kukri Snake","nonvenom","Oligodon_arnensis"],
-["ব্যান্ডেড কুকরি স্নেক","Banded Kukri Snake","nonvenom","Oligodon_taeniolatus"],
-["কমন ব্রাহ্মিণী ব্লাইন্ড স্নেক","Brahminy Blind Snake","nonvenom","Indotyphlops_braminus"],
-["ইন্ডিয়ান এগ-ইটার","Indian Egg-eater","nonvenom","Elachistodon_westermanni"],
-["কমন ইন্ডিয়ান ক্রেইট","Common Krait","venom","Bungarus_caeruleus"],
-["ব্লু ক্রেইট","Blue Krait","venom","Bungarus_candidus"],
-["ব্যান্ডেড সি ক্রেইট","Banded Sea Krait","venom","Laticauda_colubrina"],
-["ইয়েলো-লিপড সি ক্রেইট","Yellow-lipped Sea Krait","venom","Laticauda_laticaudata"],
-["ইনল্যান্ড টাইপ সি স্নেক","Sea Snake","venom","Hydrophis_cyanocinctus"],
-["বিকসড সি স্নেক","Beaked Sea Snake","venom","Hydrophis_schistosus"],
-["ইয়েলো-বেলিড সি স্নেক","Yellow-bellied Sea Snake","venom","Hydrophis_platurus"],
-["স্পাইরাল সি স্নেক","Spiraled Sea Snake","venom","Hydrophis_spiralis"],
-["গ্রেসফুল সি স্নেক","Graceful Sea Snake","venom","Hydrophis_gracilis"],
-["কমন সি স্নেক","Common Sea Snake","venom","Hydrophis_curtus"],
-["হোয়াইট-লিপড পিট ভাইপার","White-lipped Pit Viper","venom","Trimeresurus_albolabris"],
-["মালাবার পিট ভাইপার","Malabar Pit Viper","venom","Craspedocephalus_malabaricus"],
-["গ্রিন পিট ভাইপার","Green Pit Viper","venom","Trimeresurus_gramineus"],
-["হিমালয়ান পিট ভাইপার","Himalayan Pit Viper","venom","Gloydius_himalayanus"],
-["হর্নড পিট ভাইপার","Himalayan Pit Viper","venom","Gloydius_himalayanus"],
-["পোপের পিট ভাইপার","Pope's Pit Viper","venom","Trimeresurus_popeiorum"],
-["স্টেইনেগারের পিট ভাইপার","Stejneger's Pit Viper","venom","Trimeresurus_stejnegeri"],
-["জেরডনের পিট ভাইপার","Jerdon's Pit Viper","venom","Craspedocephalus_jerdonii"],
-["ম্যাক্রোলেপিস পিট ভাইপার","Large-scaled Pit Viper","venom","Craspedocephalus_macrolepis"],
-["বেডোমের ক্যাট স্নেক","Beddome's Cat Snake","venom","Boiga_beddomei"],
-["অকর স্নেক","Ochraceous Cat Snake","venom","Boiga_ochracea"],
-["সিলোন ক্যাট স্নেক","Ceylon Cat Snake","venom","Boiga_ceylonensis"],
-["লং-নোজড হুইপ স্নেক","Long-nosed Whip Snake","nonvenom","Ahaetulla_nasuta"],
-["ব্লু-আইড বুশ ভাইপার","Green Pit Viper","venom","Trimeresurus_erythrurus"],
-["কমন উলফ স্নেক","Common Wolf Snake","nonvenom","Lycodon_aulicus"],
-["ব্যান্ডেড উলফ স্নেক","Banded Wolf Snake","nonvenom","Lycodon_fasciatus"],
-["জারা উলফ স্নেক","Jara Wolf Snake","nonvenom","Lycodon_jara"],
-["কমন স্ট্রাইপড উলফ স্নেক","Striped Wolf Snake","nonvenom","Lycodon_striatus"],
-["কমন স্নেক-আইড স্নেক","Common Snake-eyed Snake","nonvenom","Myrrophis_chinensis"],
-["কমন সিবিনোফিস","Common Sibynophis","nonvenom","Sibynophis_subpunctatus"],
-["কমন ইন্ডিয়ান কিলব্যাক","Indian Keelback","nonvenom","Amphiesma_stolatum"],
-["স্ট্রাইপড কিলব্যাক","Striped Keelback","nonvenom","Amphiesma_stolatum"],
-["ব্রাউন ভাইন স্নেক","Brown Vine Snake","nonvenom","Ahaetulla"],
-["কমন গ্লসি-বেলিড রেসার","Glossy-bellied Racer","nonvenom","Platyceps_rhodorachis"],
-["ইন্ডিয়ান রক পাইথন","Indian Rock Python","nonvenom","Python_molurus"],
-["বার্মিজ পাইথন","Burmese Python","nonvenom","Python_bivittatus"],
-["কমন বোয়া","Common Boa","nonvenom","Eryx_conicus"],
-["কমন শিল্ডটেইল","Shieldtail Snake","nonvenom","Uropeltis"],
-["ব্ল্যাক শিল্ডটেইল","Black Shieldtail","nonvenom","Uropeltis_nigra"],
-["কমন ব্রাউন স্নেক","Brown Snake","nonvenom","Lycodon"],
-["কমন রাফ স্নেক","Rough-sided Snake","nonvenom","Aspidura"],
-["কমন প্যারাডাইস ফ্লাইং স্নেক","Paradise Flying Snake","nonvenom","Chrysopelea_paradisi"],
-["কমন ইন্ডিয়ান স্মুথ স্নেক","Smooth Snake","nonvenom","Coronella"],
-["কমন ট্রিঙ্কেট","Trinket Snake","nonvenom","Coelognathus_helena"],
-["রেড স্নেক","Red Snake","nonvenom","Cylindrophis"],
-["কমন পাইপ স্নেক","Common Pipe Snake","nonvenom","Cylindrophis_maculatus"],
-["কমন কিলব্যাক","Keelback Snake","nonvenom","Fowlea_piscator"],
-["কমন রিভার স্নেক","River Snake","nonvenom","Atretium_schistosum"],
-["কমন ডোর্সাল-স্ট্রাইপড স্নেক","Dorsal-striped Snake","nonvenom","Amphiesma"],
-["কমন ইন্ডিয়ান উলফ স্নেক","Indian Wolf Snake","nonvenom","Lycodon_aulicus"],
-["কমন অলিগোডন","Oligodon Snake","nonvenom","Oligodon"],
-["কমন কুকরি","Kukri Snake","nonvenom","Oligodon_arnensis"],
-["কমন রেড-স্যান্ড বোয়া","Red Sand Boa","nonvenom","Eryx_johnii"],
-["কমন পিট ভাইপার","Pit Viper","venom","Trimeresurus"],
-["কমন ক্রেইট","Common Krait","venom","Bungarus_caeruleus"],
-["কমন গোখরা","Indian Cobra","venom","Naja_naja"],
-["কমন রাসেলস ভাইপার","Russell's Viper","venom","Daboia_russelii"],
-["কমন স-স্কেলড ভাইপার","Saw-scaled Viper","venom","Echis_carinatus"],
-["কমন কিং কোবরা","King Cobra","venom","Ophiophagus_hannah"],
-["কমন মনোকলড কোবরা","Monocled Cobra","venom","Naja_kaouthia"],
-["কমন ব্যান্ডেড ক্রেইট","Banded Krait","venom","Bungarus_fasciatus"],
-["কমন গ্রিন ভাইন","Green Vine Snake","nonvenom","Ahaetulla_nasuta"],
-["কমন র‍্যাট স্নেক","Rat Snake","nonvenom","Ptyas_mucosa"],
-["কমন পাইথন","Indian Python","nonvenom","Python_molurus"],
-["কমন স্যান্ড বোয়া","Sand Boa","nonvenom","Eryx_conicus"],
-["কমন ব্রোঞ্জব্যাক ট্রি স্নেক","Bronzeback Tree Snake","nonvenom","Dendrelaphis_tristis"],
-["কমন ফ্লাইং স্নেক","Flying Snake","nonvenom","Chrysopelea_ornata"],
-["কমন ব্লাইন্ড স্নেক","Blind Snake","nonvenom","Indotyphlops_braminus"],
-["কমন সি স্নেক","Sea Snake","venom","Hydrophis_platurus"],
-["কমন পিট ভাইপার","Green Pit Viper","venom","Trimeresurus_albolabris"],
-["কমন ক্যাট স্নেক","Cat Snake","venom","Boiga_trigonata"],
-["কমন কিলব্যাক স্নেক","Keelback","nonvenom","Fowlea_piscator"],
-["কমন উলফ স্নেক","Wolf Snake","nonvenom","Lycodon_aulicus"],
-["কমন ট্রি স্নেক","Tree Snake","nonvenom","Dendrelaphis_tristis"],
-["কমন জলসাপ","Water Snake","nonvenom","Fowlea_piscator"],
-
-const snakes = snakeData.map(([name,en,type,file]) => ({
-  name, en, type, emoji:"🐍",
-  img:"https://commons.wikimedia.org/wiki/Special:FilePath/"+file+".jpg",
-  desc: type==="venom"
-    ? "বিষধর বা সম্ভাব্য বিপজ্জনক সাপ। কাছে যাবেন না; ছবি দেখে একা শনাক্ত করবেন না।"
-    : "সাপের পরিচয় নিশ্চিত করতে বিশেষজ্ঞের সাহায্য নিন। কোনো সাপকেই ধরবেন না।"
-}));
+const snakes = [
+ {name:"Indian Cobra",sci:"Naja naja",type:"venomous",region:"Many parts of India",info:"Often recognised by its hood display. Colour and markings vary.",safety:"Venomous. Keep your distance and never try to handle it."},
+ {name:"Common Krait",sci:"Bungarus caeruleus",type:"venomous",region:"Much of India",info:"A mainly nocturnal snake, often dark with pale bands.",safety:"Potentially life-threatening venom. Seek immediate hospital care after a suspected bite."},
+ {name:"Russell's Viper",sci:"Daboia russelii",type:"venomous",region:"Many parts of India",info:"A heavy-bodied viper often found in grassland and agricultural areas.",safety:"Can cause severe envenoming. Do not approach."},
+ {name:"Saw-scaled Viper",sci:"Echis carinatus",type:"venomous",region:"Dry regions of India",info:"A small viper associated with dry and arid habitats.",safety:"Dangerous venom. Stay away and seek emergency care for a suspected bite."},
+ {name:"King Cobra",sci:"Ophiophagus hannah",type:"venomous",region:"Parts of Northeast India and Western Ghats",info:"A large venomous snake associated with forest habitats.",safety:"Never approach for a photograph. Contact trained wildlife responders."},
+ {name:"Banded Krait",sci:"Bungarus fasciatus",type:"venomous",region:"Parts of eastern and northeastern India",info:"Known for broad alternating black and yellow bands.",safety:"Venomous. Keep well away."},
+ {name:"Bamboo Pit Viper",sci:"Craspedocephalus gramineus",type:"venomous",region:"Western Ghats",info:"An arboreal pit viper often found among vegetation.",safety:"Do not reach into dense vegetation or try to handle it."},
+ {name:"Common Rat Snake",sci:"Ptyas mucosa",type:"nonvenomous",region:"Widespread in India",info:"A long, fast-moving snake often found around farms and settlements.",safety:"May bite if cornered. Leave it alone."},
+ {name:"Indian Rock Python",sci:"Python molurus",type:"nonvenomous",region:"Parts of the Indian subcontinent",info:"A large constrictor found in a range of natural habitats.",safety:"A powerful wild animal. Keep your distance."},
+ {name:"Checkered Keelback",sci:"Fowlea piscator",type:"nonvenomous",region:"Freshwater habitats across parts of India",info:"A water-associated snake often seen near ponds and wetlands.",safety:"Do not handle; allow it to move away."},
+ {name:"Common Wolf Snake",sci:"Lycodon aulicus",type:"nonvenomous",region:"Widespread in India",info:"A small nocturnal snake sometimes seen around homes.",safety:"It can be confused with other species. Do not identify by resemblance alone."},
+ {name:"Indian Sand Boa",sci:"Eryx johnii",type:"nonvenomous",region:"Parts of India, especially dry areas",info:"A stout burrowing snake with a blunt tail.",safety:"Leave it undisturbed. Never dig it out or handle it."},
+ {name:"Trinket Snake",sci:"Coelognathus helena",type:"nonvenomous",region:"Various parts of India",info:"Found in woodland, scrub and some cultivated landscapes.",safety:"Do not corner or catch it."},
+ {name:"Bronzeback Tree Snake",sci:"Dendrelaphis tristis",type:"nonvenomous",region:"Parts of India",info:"A slender, agile snake often seen in trees and shrubs.",safety:"Observe from a distance and avoid handling."},
+ {name:"Sea Snakes",sci:"Hydrophiinae",type:"venomous",region:"Indian coastal waters",info:"Several sea snake species occur in Indian waters; identification requires expertise.",safety:"Never touch a live or stranded sea snake."}
 ];
 
 const grid=document.getElementById("grid");
 const search=document.getElementById("search");
-let active="all";
+const filter=document.getElementById("filter");
 
 function render(){
  const q=search.value.trim().toLowerCase();
+ const f=filter.value;
  const list=snakes.filter(s=>
- (active==="all"||s.type===active)&&
- (s.name+" "+s.en+" "+s.desc).toLowerCase().includes(q)
+  (f==="all"||s.type===f)&&
+  (s.name+" "+s.sci+" "+s.region).toLowerCase().includes(q)
  );
- grid.innerHTML="";
- document.getElementById("count").textContent="দেখানো হচ্ছে "+list.length+"টি সাপ";
- list.forEach(s=>{
-  const card=document.createElement("article");
-  card.className="card";
-  const photo=document.createElement("div");
-  photo.className="photo";
-  const fallback=document.createElement("div");
-  fallback.className="fallback";
-  fallback.textContent=s.emoji;
-  photo.appendChild(fallback);
-  const img=document.createElement("img");
-  img.src=s.img;
-  img.alt=s.name+" ("+s.en+")";
-  img.loading="lazy";
-  img.onload=()=>{photo.innerHTML="";photo.appendChild(img)};
-  img.onerror=()=>{};
-  const content=document.createElement("div");
-  content.className="content";
-  const h=document.createElement("h3");
-  h.textContent=s.name;
-  const en=document.createElement("p");
-  en.className="english";
-  en.textContent=s.en;
-  const tag=document.createElement("span");
-  tag.className="tag "+(s.type==="venom"?"venom":"nonvenom");
-  tag.textContent=s.type==="venom"?"বিষধর":"সাধারণত অবিষধর";
-  const desc=document.createElement("p");
-  desc.textContent=s.desc;
-  content.append(h,en,tag,desc);
-  card.append(photo,content);
-  grid.appendChild(card);
- });
+ document.getElementById("count").textContent=`Showing ${list.length} of ${snakes.length} entries`;
+ grid.innerHTML=list.map((s,i)=>`
+  <article class="card">
+   <div class="snake-picture">🐍</div>
+   <div class="card-body">
+    <h3>${s.name}</h3>
+    <div class="scientific">${s.sci}</div>
+    <span class="badge ${s.type==="venomous"?"danger":"safe"}">${s.type==="venomous"?"Venomous":"Non-venomous"}</span>
+    <p>${s.info}</p>
+    <button data-index="${snakes.indexOf(s)}">View Details ↗</button>
+   </div>
+  </article>`).join("") ||
+  "<p>No snakes found. Try another search.</p>";
 }
-search.addEventListener("input",render);
-document.querySelectorAll("[data-filter]").forEach(btn=>{
- btn.addEventListener("click",()=>{
-  active=btn.dataset.filter;
-  document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b===btn));
-  render();
- });
+
+grid.addEventListener("click",e=>{
+ const b=e.target.closest("button[data-index]");
+ if(!b)return;
+ const s=snakes[Number(b.dataset.index)];
+ document.getElementById("modalName").textContent=s.name;
+ document.getElementById("modalScientific").textContent=s.sci;
+ document.getElementById("modalStatus").textContent="Status: "+(s.type==="venomous"?"Venomous":"Generally considered non-venomous");
+ document.getElementById("modalInfo").textContent="About: "+s.info+" Region: "+s.region+".";
+ document.getElementById("modalSafety").textContent="Safety: "+s.safety;
+ document.getElementById("modal").classList.add("show");
 });
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+document.getElementById("close").addEventListener("click",closeModal);
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+search.addEventListener("input",render);
+filter.addEventListener("change",render);
+document.getElementById("total").textContent=snakes.length;
+document.getElementById("year").textContent=new Date().getFullYear();
 render();
 </script>
 </body>
