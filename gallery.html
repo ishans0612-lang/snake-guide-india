@@ -4,117 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10251d">
-  <meta name="description" content="Real snake photo gallery with common names and scientific names, sourced from Wikimedia Commons for educational use.">
+  <meta name="description" content="A dark-green, photo-rich snake gallery with common and scientific names and Wikimedia Commons image credits.">
   <title>Snake Photo Gallery | Snake Guide World</title>
   <style>
-    :root{color-scheme:dark;--bg:#0b1712;--panel:#12251b;--panel2:#192f23;--ink:#f3f5e9;--muted:#a9b8a8;--line:#294435;--accent:#c5f477;--shadow:0 18px 50px rgba(0,0,0,.25)}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1e3b2d 0,#0b1712 58%);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-    .wrap{width:min(1200px,92%);margin:auto}header{padding:18px 0;border-bottom:1px solid var(--line)}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand{font-weight:800;color:var(--ink);text-decoration:none}.brand span{color:var(--accent)}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{color:var(--muted);text-decoration:none}.nav a:hover{color:var(--ink)}main{padding:38px 0 56px}h1{font-size:clamp(28px,4vw,48px);line-height:1.12;margin:0 0 10px}.lead{color:var(--muted);max-width:760px;margin:0 0 28px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.photo{height:200px;overflow:hidden;background:#0e1f19}.photo img{width:100%;height:100%;object-fit:cover;display:block}.meta{padding:14px 15px 16px}.meta h3{margin:0 0 4px;font-size:1.08rem}.meta .sci{margin:0;color:var(--muted);font-style:italic;font-size:.9rem}.meta small{display:block;margin-top:10px;color:var(--accent)}.info{margin-top:24px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(18,37,27,.7);color:var(--muted)}.info strong{color:var(--ink)}@media(max-width:600px){.gallery{grid-template-columns:1fr}.card{border-radius:14px}}
+    :root{color-scheme:dark;--bg:#0b1712;--surface:#12251b;--surface2:#192f23;--ink:#f3f5e9;--muted:#a9b8a8;--line:#294435;--lime:#c5f477;--orange:#ffb36b;--shadow:0 20px 60px #0003}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#1d3b2b 0,transparent 35%),var(--bg);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(1160px,92%);margin:auto}a{color:inherit}.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);gap:20px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:-.03em}.brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--lime);color:#14261a;font-size:16px;font-weight:900}.brand span:last-child{color:var(--lime)}.nav{display:flex;gap:22px;align-items:center}.nav a{text-decoration:none;color:var(--muted);font-size:14px}.nav a:hover{color:var(--lime)}main{padding:48px 0 56px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--lime)}h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.06em;line-height:1;margin:13px 0 16px}.lead{max-width:760px;color:var(--muted);font-size:17px}.note{margin:20px 0;padding:13px 16px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--muted);font-size:13px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 15px;color:var(--muted);font-size:13px}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:linear-gradient(145deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#789d5a}.photo{height:220px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 30%,#3b5c3d,#17281c 70%);display:grid;place-items:center;text-align:center;padding:18px;color:#c7d6bf;font-size:13px}.photo img{width:100%;height:100%;object-fit:cover;display:block}.credit{position:absolute;bottom:0;left:0;right:0;padding:21px 10px 7px;background:linear-gradient(transparent,#07130ee8);font-size:10px;line-height:1.35;color:#f2f5ee}.credit a{text-underline-offset:2px}.body{padding:16px}.body h2{margin:0;font-size:19px;line-height:1.25}.sci{font-size:13px;color:var(--muted);font-style:italic;margin-top:4px}.body p{margin:10px 0 0;color:var(--muted);font-size:13px}.footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:13px}.empty{grid-column:1/-1;color:var(--muted);padding:25px;border:1px dashed var(--line);border-radius:14px;text-align:center}.light{--bg:#f4f6ef;--surface:#fff;--surface2:#fff;--ink:#1a2e22;--muted:#5e7062;--line:#d8e2d6;--lime:#477b2b;--orange:#8e4d14;color-scheme:light}.light .photo{background:radial-gradient(ellipse at 70% 30%,#d1e8bd,#e7efe0 70%);color:#294532}.light .note{background:#fff}.light .credit{color:white}@media(max-width:850px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.topbar{align-items:flex-start}.nav{gap:13px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:12px}.brand-mark{width:35px;height:35px}.gallery{grid-template-columns:1fr}.photo{height:235px}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap topbar">
-      <a class="brand" href="index.html">Snake Guide <span>World</span></a>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="#gallery">Gallery</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <h1>Real snake photo gallery</h1>
-    <p class="lead">This gallery shows real wildlife photographs from Wikimedia Commons paired with common and scientific names, intended for educational reference only. Please keep a respectful distance from wildlife and never handle a snake for identification.</p>
-    <section id="gallery" class="gallery" aria-live="polite"></section>
-    <div class="info"><strong>Note:</strong> Wikimedia Commons image availability changes over time. The browser loads public images from Commons, and your use of them should follow the image's original license, attribution, and source terms.</div>
-  </main>
-
-  <script>
-    const species = [
-      { name: 'King Cobra', scientific: 'Ophiophagus hannah' },
-      { name: 'Indian Cobra', scientific: 'Naja naja' },
-      { name: 'Reticulated Python', scientific: 'Malayopython reticulatus' },
-      { name: 'Indian Rock Python', scientific: 'Python molurus' },
-      { name: 'Green Tree Python', scientific: 'Morelia viridis' },
-      { name: 'Black Mamba', scientific: 'Dendroaspis polylepis' },
-      { name: 'Boa Constrictor', scientific: 'Boa constrictor' },
-      { name: 'Green Anaconda', scientific: 'Eunectes murinus' },
-      { name: 'Common Krait', scientific: 'Bungarus caeruleus' },
-      { name: 'Russell\'s Viper', scientific: 'Daboia russelii' },
-      { name: 'Eastern Coral Snake', scientific: 'Micrurus fulvius' },
-      { name: 'Corn Snake', scientific: 'Pantherophis guttatus' }
-    ];
-
-    const galleryEl = document.getElementById('gallery');
-
-    async function fetchCommonsImage(name) {
-      const url = new URL('https://commons.wikimedia.org/w/api.php');
-      url.search = new URLSearchParams({
-        origin: '*',
-        action: 'query',
-        generator: 'search',
-        gsrsearch: `${name} snake`,
-        gsrnamespace: '6',
-        gsrlimit: '1',
-        format: 'json',
-        prop: 'imageinfo',
-        iiprop: 'url|extmetadata',
-        iiurlwidth: '800'
-      }).toString();
-
-      try {
-        const response = await fetch(url, { headers: { Accept: 'application/json' } });
-        if (!response.ok) return null;
-        const data = await response.json();
-        const pages = data?.query?.pages ? Object.values(data.query.pages) : [];
-        const page = pages[0];
-        const info = page?.imageinfo?.[0];
-        return info?.url || null;
-      } catch (error) {
-        return null;
-      }
-    }
-
-    async function renderGallery() {
-      for (const snake of species) {
-        const card = document.createElement('article');
-        card.className = 'card';
-
-        const photo = document.createElement('div');
-        photo.className = 'photo';
-        const img = document.createElement('img');
-        img.alt = snake.name;
-        img.loading = 'lazy';
-        photo.appendChild(img);
-
-        const meta = document.createElement('div');
-        meta.className = 'meta';
-        const h3 = document.createElement('h3');
-        h3.textContent = snake.name;
-        const sci = document.createElement('p');
-        sci.className = 'sci';
-        sci.textContent = snake.scientific;
-        const source = document.createElement('small');
-        source.textContent = 'Loading Wikimedia Commons image…';
-
-        meta.append(h3, sci, source);
-        card.append(photo, meta);
-        galleryEl.appendChild(card);
-
-        const imageUrl = await fetchCommonsImage(snake.name);
-        if (imageUrl) {
-          img.src = imageUrl;
-          source.textContent = 'Wikimedia Commons photo';
-        } else {
-          img.alt = `No matching public photo for ${snake.name}`;
-          img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#0f1f1b"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#dfeadf" font-size="26" font-family="Arial">No image found</text></svg>');
-          source.textContent = 'No public image found';
-        }
-      }
-    }
-
-    renderGallery();
-  </script>
+  <header class="wrap"><nav class="topbar" aria-label="Main navigation"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">SG</span>Snake Guide <span>World</span></a><div class="nav"><a href="index.html">Home</a><a href="catalog.html">Global catalog</a><a href="identify.html">Photo suggestions</a></div></nav></header>
+  <main class="wrap"><div class="eyebrow">Free wildlife photo guide</div><h1>Real snakes.<br><span style="color:var(--lime)">Names included.</span></h1><p class="lead">Browse real photographs associated with snake species. Each card shows the common name, scientific name, and a link to the Wikimedia Commons image page for its contributor and license details.</p><div class="note"><strong>Important:</strong> Photos load from Wikimedia Commons when this page is online; they are not bundled as local image files. Image matches are automated and may be missing or mislabeled. Use the linked Commons page to inspect each image and its license. This gallery is educational—not a snake identification or safety tool.</div><div class="toolbar"><span id="status" aria-live="polite">Loading free, credited photos…</span><span>12 species</span></div><section class="gallery" id="gallery" aria-label="Snake photographs"></section></main>
+  <footer class="footer"><div class="wrap">Photos are served by Wikimedia Commons and remain subject to their individual licenses. Do not approach or handle wildlife to take a photo. Never use these pictures to decide whether a snake is safe.</div></footer>
+<script>
+const snakes=[
+ {name:'King Cobra',sci:'Ophiophagus hannah'},
+ {name:'Indian Cobra',sci:'Naja naja'},
+ {name:'Reticulated Python',sci:'Malayopython reticulatus'},
+ {name:'Indian Rock Python',sci:'Python molurus'},
+ {name:'Green Tree Python',sci:'Morelia viridis'},
+ {name:'Black Mamba',sci:'Dendroaspis polylepis'},
+ {name:'Boa Constrictor',sci:'Boa constrictor'},
+ {name:'Green Anaconda',sci:'Eunectes murinus'},
+ {name:'Common Krait',sci:'Bungarus caeruleus'},
+ {name:'Russell’s Viper',sci:'Daboia russelii'},
+ {name:'Eastern Coral Snake',sci:'Micrurus fulvius'},
+ {name:'Corn Snake',sci:'Pantherophis guttatus'}
+];
+const gallery=document.getElementById('gallery'),status=document.getElementById('status');
+function textFromHtml(value){const el=document.createElement('div');el.innerHTML=value||'';return(el.textContent||'').trim().replace(/\s+/g,' ')}
+async function commonsSearch(sci){const url=new URL('https://commons.wikimedia.org/w/api.php');url.search=new URLSearchParams({action:'query',generator:'search',gsrsearch:`filetype:bitmap "${sci}"`,gsrnamespace:'6',gsrlimit:'8',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'900',format:'json',origin:'*'});const response=await fetch(url);if(!response.ok)throw new Error('Photo search unavailable');const data=await response.json();const pages=Object.values(data.query?.pages||{});for(const page of pages){const info=page.imageinfo?.[0];if(!info)continue;const meta=info.extmetadata||{};const license=textFromHtml(meta.LicenseShortName?.value)||'See file page for license';const artist=textFromHtml(meta.Artist?.value)||textFromHtml(meta.Credit?.value)||'Wikimedia Commons contributor';return{image:info.thumburl||info.url,page:info.descriptionurl||`https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title)}`,license,artist}}return null}
+function makeCard(snake){const card=document.createElement('article');card.className='card';const photo=document.createElement('div');photo.className='photo';photo.textContent='Looking for a freely accessible photo…';const body=document.createElement('div');body.className='body';const title=document.createElement('h2');title.textContent=snake.name;const sci=document.createElement('div');sci.className='sci';sci.textContent=snake.sci;const desc=document.createElement('p');desc.textContent='Illustrative wildlife photograph';body.append(title,sci,desc);card.append(photo,body);gallery.append(card);return{photo,card}}
+async function load(){let found=0;for(const snake of snakes){const {photo}=makeCard(snake);try{const result=await commonsSearch(snake.sci);photo.replaceChildren();if(!result){photo.textContent='No matching Commons photo found';continue}const img=document.createElement('img');img.src=result.image;img.alt=`Wikimedia Commons photograph listed for ${snake.name} (${snake.sci}); illustrative, not for identification`;img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=()=>{photo.replaceChildren();photo.textContent='Photo could not be loaded'};photo.append(img);const credit=document.createElement('div');credit.className='credit';const link=document.createElement('a');link.href=result.page;link.target='_blank';link.rel='noopener noreferrer';link.textContent=`${result.artist} · ${result.license} · view source/license`;credit.append(link);photo.append(credit);found++;status.textContent=`Loaded ${found} photo${found===1?'':'s'}; checking ${snakes.length} species`}catch{photo.replaceChildren();photo.textContent='Photo service unavailable; try again later'}}status.textContent=`Gallery ready: ${found} photos loaded for ${snakes.length} listed species. More may be available later.`}
+try{if(localStorage.getItem('snake-guide-world-theme')==='light')document.body.classList.add('light')}catch{}load();
+</script>
 </body>
 </html>
