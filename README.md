@@ -1,28 +1,31 @@
 # Snake Guide World
 
-A no-build, static educational snake guide. Open `index.html` for the curated starter directory, or `catalog.html` to load up to 2,000 snake species taxonomy records from the public iNaturalist API. Both pages use no paid API. The catalog searches Wikimedia Commons for CC-licensed or public-domain photos and displays attribution links when a suitable match is available.
+A no-build, static educational snake guide. Open `index.html` for the curated starter directory, `catalog.html` to load up to 2,000 taxonomy records from the public iNaturalist API, or `identify.html` to submit a photo to iNaturalist's computer-vision service for non-definitive visual suggestions. No paid API is required, but the photo and taxonomy features need an internet connection and rely on third-party public services.
 
 ## Run locally
 
-Open `index.html` or `catalog.html` in a modern browser. For browser security and cross-origin requests, use a local static server or GitHub Pages to test the external APIs. GitHub Pages can host the site for free.
+Open the site through GitHub Pages or a local static server. Camera access may require a secure context (HTTPS/localhost). The identify page also accepts an existing image file.
 
-## Main site features
+## Features
 
 - Responsive Snake Guide World landing page and curated starter directory.
-- Search, region and broad venom-category filters, saved entries, light/dark theme.
+- Search, region and broad venom-category filters, saved entries, and a light/dark theme.
 - Country/region emergency-number selector.
 - Free Wikimedia Commons photo lookup with visible source/license attribution where available.
-- Separate `catalog.html` page that can load up to 2,000 snake taxonomy records from iNaturalist in batches, with search and lazy photo lookup.
+- `catalog.html` loads up to 2,000 snake taxonomy records from iNaturalist in batches and searches Commons for permissively licensed photos.
+- `identify.html` allows a user to take/select a photo and ask iNaturalist computer vision for up to eight possible look-alikes.
 
-## Data, safety, and limitations
+## Safety, privacy, and limitations
 
-This is educational content, not a medical resource or a definitive identification tool. Never use photos or this guide to decide whether a snake is safe. The large catalog only presents taxonomy names and optional common names; venom status and geographic ranges are deliberately not inferred. Taxonomy can change and records may vary between authorities. For suspected bites, contact local emergency services and seek urgent medical care.
+This is educational content, not a medical resource or a definitive identification tool. Never use photos or this guide to decide whether a snake is safe. Automated suggestions may be incorrect; their match score is not a probability, and this feature does not determine venom status. Never approach, handle, trap, or provoke wildlife to take a picture. For suspected bites, move away, contact local emergency services, and seek urgent medical care.
 
-Emergency-number coverage is limited. Numbers and availability can vary by locality, telecom network, and country. Confirm the correct number with official local sources, especially before travelling. Before publishing or selling, ask a qualified herpetologist to review curated species content and check emergency numbers against current official sources.
+On the photo-suggestion page, the chosen image is sent to the public iNaturalist computer-vision endpoint. Do not upload sensitive images. The site itself does not store the selected image. Third-party service availability, usage policies, and rate limits may change.
 
-## Free data and photo sources
+The large catalog presents taxonomy names and optional common names; venom status and geographic ranges are deliberately not inferred. Taxonomy changes over time. Emergency-number coverage is limited; verify the correct number with current official local sources. Before publishing or selling, get expert review of the curated species information and safety content.
 
-- [iNaturalist public API](https://api.inaturalist.org/v1/docs/) — taxonomy records.
-- [Wikimedia Commons API](https://www.mediawiki.org/wiki/API:Search) — images; the catalog filters photo results to CC BY, CC BY-SA, CC0, or public domain and links to the Commons file page for attribution and full terms. Image availability is not guaranteed for every species.
+## Data and image sources
+
+- [iNaturalist public API](https://api.inaturalist.org/v1/docs/) — taxonomy and computer-vision suggestions.
+- [Wikimedia Commons API](https://www.mediawiki.org/wiki/API:Search) — images; photo pages link to their source and license information. Image availability is not guaranteed for every species.
 
 No commercial value or sale price is guaranteed.
